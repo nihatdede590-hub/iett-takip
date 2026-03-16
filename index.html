@@ -511,5 +511,18 @@ function render(){
 render();
 setInterval(render,30000);
 </script>
+  <div id="kwgt-data" style="display:none;"></div>
+
+<script>
+// render fonksiyonunun en sonuna şu satırları ekle:
+function updateKWGT() {
+    const km = document.querySelector('#slots-km .col-blue')?.innerText || "--:--";
+    const fy = document.querySelector('#slots-fy .col-green')?.innerText || "--:--";
+    const fk = document.querySelector('#slots-fk .col-purple')?.innerText || "--:--";
+    document.getElementById('kwgt-data').innerText = km + "|" + fy + "|" + fk;
+}
+// Mevcut render() fonksiyonun biterken updateKWGT(); satırını çağır.
+</script>
+  
 </body>
 </html>
